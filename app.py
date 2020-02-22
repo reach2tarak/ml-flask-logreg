@@ -12,14 +12,14 @@ def home():
 
 @app.route('/download')
 def download():
-    with open("/home/tarak/Desktop/MyPythonDS/ML-Flask-App/data/pred.csv") as fp:
+    with open("data/pred.csv") as fp:
          csv = fp.read()
     return Response(csv, mimetype="text/csv", headers={"Content-disposition": "attachment; filename=myplot.csv"})
 
 @app.route('/predict', methods=['POST'])
 def predict():
 
-     df = pd.read_csv ("/home/tarak/Desktop/MyPythonDS/ML-Flask-App/data/input.csv")
+     df = pd.read_csv ("data/input.csv")
      X = df[["gmat", "gpa","work_experience"]]
      y = df['admitted']
      X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.25,random_state=0)  #in this case, you may choose to set the test_size=0. You should get the same prediction here
