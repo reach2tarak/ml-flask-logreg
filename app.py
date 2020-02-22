@@ -1,12 +1,8 @@
-import os
-import requests
-import re
-from flask import Flask, Response, render_template, url_for, request, send_from_directory
+from flask import Flask, Response, render_template, url_for, request
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-from sklearn import metrics
-import seaborn as sn
+
 
 app = Flask(__name__)
 
