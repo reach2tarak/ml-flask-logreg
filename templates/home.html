@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>Predictition Page</title>
+    </head>
+    <body>
+	<p>Download Template from <a href="{{ url_for('download') }}">here</a></p>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            Choose the file: <input type="file" name="pred_file"/><BR>
+                <input type="submit" value="Predict"/>
+        </form> 
+    </body>
+</html>
